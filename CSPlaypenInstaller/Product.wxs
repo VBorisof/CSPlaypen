@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="732b9517-792e-48c5-a435-e60a4a150c18"
+           Name="C-Sharp Playpen"
+           Language="1033"
+           Version="1.0.0.0"
+           Manufacturer="ImpacTech"
+           UpgradeCode="0b8561f5-e290-41ef-b4ac-07b04bc16322">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Condition Message="You need to have administrator rights to install this product.">
+      Privileged
+    </Condition>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="Complete" Title="CSPlaypenInstaller" Level="1" 
+             ConfigurableDirectory="INSTALLFOLDER" TypicalDefault="install" >
+      <ComponentRef Id="Executable" />
+      <Feature Id="SubFeature1" Title="First Subfeature" Level="1" >
+        <ComponentRef Id="Feature1"/>
+      </Feature>
+      <Feature Id="SubFeature2" Title="Second Subfeature" Level="1" >
+        <ComponentRef Id="Feature2"/>
+      </Feature>
+      <Feature Id="SubFeature3" Title="Third Subfeature" Level="1" >
+        <ComponentRef Id="Feature3"/>
+      </Feature>
+    </Feature>
+
+    <UIRef Id="WixUI_FeatureTree" />
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="ImpacTech" Name="ImpacTech">
+          <Directory Id="INSTALLFOLDER" Name="CSPlaypen" />
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+       <Component Id="Executable" Guid="19f7bbc4-05fc-4d07-9c38-9123434ddbc6">
+         <File Id="Executable" Name="CSPlaypen.exe" Source="CSPlaypen.exe" KeyPath="yes">
+         </File>
+       </Component>
+      <Component Id="Feature1" Guid="4fa8fbf2-90d1-4365-8904-25ab7120c9c2">
+        <File Id="Feature1" Name="feature1" Source="feature1" KeyPath="yes">
+        </File>
+      </Component>
+      <Component Id="Feature2" Guid="8e00a3c0-cdcc-4351-a963-af9888609f69">
+        <File Id="Feature2" Name="feature2" Source="feature2" KeyPath="yes">
+        </File>
+      </Component>
+      <Component Id="Feature3" Guid="c1bcc8a1-b177-4803-9f63-1673fad9184b">
+        <File Id="Feature3" Name="feature3" Source="feature3" KeyPath="yes">
+        </File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+</Wix>
