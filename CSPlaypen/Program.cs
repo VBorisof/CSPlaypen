@@ -1,7 +1,4 @@
-﻿using Confluent.Kafka;
-using Newtonsoft.Json;
-using System;
-using System.Threading;
+﻿using System;
 using CSPlaypen.Extensions;
 
 namespace CSPlaypen

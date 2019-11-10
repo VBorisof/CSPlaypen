@@ -8,15 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Confluent.Kafka" Version="1.0.0-beta2" />
-    <PackageReference Include="Confluent.Kafka.Avro" Version="1.0-beta2" />
-    <PackageReference Include="Grapevine" Version="4.1.1" />
-    <PackageReference Include="LibGit2Sharp" Version="0.25.4" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
-    <PackageReference Include="ZooKeeperNetEx" Version="3.4.12" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="System">
       <HintPath>System</HintPath>
     </Reference>
